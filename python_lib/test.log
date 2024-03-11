@@ -1,0 +1,10 @@
+2024-02-20 15:49:21,879 - logger_test颇老 - (message)s
+2024-02-20 15:49:21,880 - logger_test颇老 - (message)s
+2024-02-20 15:49:21,880 - logger_test颇老 - (message)s
+2024-02-20 15:49:21,880 - logger_test颇老 - (message)s
+Traceback (most recent call last):
+  File "C:\Users\20202\PycharmProjects\pythonProject\python_lib\logger_test.py", line 7, in <module>
+    result = 2/0
+             ~^~
+ZeroDivisionError: division by zero
+2024-02-20 15:49:21,882 - logger_test颇老 - (message)s
