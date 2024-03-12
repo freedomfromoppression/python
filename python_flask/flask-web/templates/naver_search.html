@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn").click(function(){
+            let subUrl = "http://192.168.0.17:5555/naver";
+            let query = $("#search").val();
+            $.ajax({
+            url : subUrl
+           ,type : "POST"
+           ,contentType:"application/json"
+           ,data : JSON.stringify({'query':query})
+           ,dataType : 'json'
+           ,success : function(res){
+               console.log(res)
+               items = res['items'];
+               $(items).each(function(i,v){
+                   console.log(v['title']);
+                   $('#tb').append(v['title']);
+               });
+             },error : function(e){
+                console.log(e)
+             }
+
+        });
+    });
+});
+
+    </script>
+</head>
+<body>
+    <!-- 검색어의 내용을 naver api를 이용하여 출력하세요
+        1.ajax로 app.py 요청
+
+    -->
+    <form>
+        검색어: <input type="text" id="search">
+        <button type="button" id="btn">검색</button>
+    </form>
+    <div id="tb">
+    </div>
+
+</body>
+</html>
